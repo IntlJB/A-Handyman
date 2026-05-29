@@ -6,12 +6,22 @@
   <title>A-Handyman | Handyman i Storkøbenhavn og på Sjælland</title>
   <meta name="description" content="A-Handyman hjælper med tømrerarbejde, haveservice, montering, mindre VVS, fliserens og praktiske opgaver i Storkøbenhavn og på Sjælland.">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="A-Handyman ApS">
   <link rel="canonical" href="https://www.a-handyman.dk/">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:site_name" content="A-Handyman">
   <meta property="og:title" content="A-Handyman | Hjælp til alt det praktiske">
   <meta property="og:description" content="To fagudlærte handymen fra Glostrup. Praktiske opgaver ude og inde i Storkøbenhavn og på Sjælland.">
   <meta property="og:image" content="https://www.a-handyman.dk/assets/hero-handyman.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Jonas og Frederik fra A-Handyman arbejder på et isoleringsprojekt">
   <meta property="og:url" content="https://www.a-handyman.dk/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A-Handyman | Handyman i Storkøbenhavn og på Sjælland">
+  <meta name="twitter:description" content="Faglært hjælp til tømrerarbejde, haveservice, montering, mindre VVS, fliserens og praktiske opgaver.">
+  <meta name="twitter:image" content="https://www.a-handyman.dk/assets/hero-handyman.jpeg">
   <meta name="theme-color" content="#1c1a17">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -220,6 +230,10 @@
     .price-unit { color: var(--warm); font-size: .8rem; }
     .price-desc { margin: 1.4rem 0 0; color: var(--warm); font-size: .9rem; }
     .price-card img { max-width: 156px; margin-top: 1.4rem; }
+    .payment-visual { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin-top: 1.4rem; }
+    .payment-visual img { height: auto; margin-top: 0; }
+    .payment-visual .card-payment { width: 156px; max-width: 100%; }
+    .payment-visual .mobilepay-logo { width: 116px; max-width: 100%; }
 
     .contact-section { background: var(--ink); color: #fff; }
     .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 4rem; align-items: start; }
@@ -285,25 +299,66 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "A-Handyman ApS",
-    "image": "https://www.a-handyman.dk/assets/hero-handyman.jpeg",
-    "url": "https://www.a-handyman.dk/",
-    "telephone": "+4528604425",
-    "email": "info@a-handyman.dk",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Produktionsvej 8",
-      "postalCode": "2600",
-      "addressLocality": "Glostrup",
-      "addressCountry": "DK"
-    },
-    "areaServed": ["Storkøbenhavn", "Sjælland"],
-    "priceRange": "375-425 DKK/time ekskl. moms",
-    "sameAs": [
-      "https://dk.trustpilot.com/review/a-handyman.dk",
-      "https://facebook.com/profile.php?id=61573008022210",
-      "https://instagram.com/a_handyman.dk/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.a-handyman.dk/#website",
+        "url": "https://www.a-handyman.dk/",
+        "name": "A-Handyman",
+        "inLanguage": "da-DK",
+        "publisher": { "@id": "https://www.a-handyman.dk/#business" }
+      },
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.a-handyman.dk/#business",
+        "name": "A-Handyman ApS",
+        "url": "https://www.a-handyman.dk/",
+        "image": "https://www.a-handyman.dk/assets/hero-handyman.jpeg",
+        "logo": "https://www.a-handyman.dk/assets/logo-white.svg",
+        "telephone": "+4528604425",
+        "email": "info@a-handyman.dk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Produktionsvej 8",
+          "postalCode": "2600",
+          "addressLocality": "Glostrup",
+          "addressCountry": "DK"
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Storkøbenhavn" },
+          { "@type": "AdministrativeArea", "name": "Sjælland" }
+        ],
+        "priceRange": "375-425 DKK/time ekskl. moms",
+        "sameAs": [
+          "https://dk.trustpilot.com/review/a-handyman.dk",
+          "https://facebook.com/profile.php?id=61573008022210",
+          "https://instagram.com/a_handyman.dk/"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Handyman-ydelser",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tømrerarbejde" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haveservice" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Montering" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mindre VVS og EL" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Isolering" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tagrender" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fliserens" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ejendomsservice" } }
+          ]
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.a-handyman.dk/#webpage",
+        "url": "https://www.a-handyman.dk/",
+        "name": "A-Handyman | Handyman i Storkøbenhavn og på Sjælland",
+        "description": "A-Handyman hjælper med tømrerarbejde, haveservice, montering, mindre VVS, fliserens og praktiske opgaver i Storkøbenhavn og på Sjælland.",
+        "isPartOf": { "@id": "https://www.a-handyman.dk/#website" },
+        "about": { "@id": "https://www.a-handyman.dk/#business" },
+        "inLanguage": "da-DK"
+      }
     ]
   }
   </script>
@@ -344,7 +399,7 @@
           </div>
         </div>
         <div class="hero-media">
-          <img src="assets/hero-handyman.jpeg" alt="Jonas og Frederik fra A-Handyman lægger isolering på et loft" width="1200" height="800">
+          <img src="assets/hero-handyman.jpeg" alt="Jonas og Frederik fra A-Handyman lægger isolering på et loft" width="1200" height="800" fetchpriority="high" decoding="async">
           <div class="hero-note">
             <strong>Faglært hjælp i øjenhøjde</strong>
             <span>Baseret i Glostrup - vi kører i Storkøbenhavn og på det meste af Sjælland.</span>
@@ -364,35 +419,35 @@
         </div>
         <div class="services-grid">
           <article class="service-card reveal">
-            <img src="assets/service-tomrer.jpeg" alt="Tømrerarbejde udført af A-Handyman" loading="lazy">
+            <img src="assets/service-ophaengning.jpeg" alt="Praktisk montering og tømrerarbejde udført af A-Handyman" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">01</span><h3 class="service-title">Tømrerarbejde</h3><p class="service-desc">Mindre reparationer, opbygning, montering og praktiske løsninger med faglig finish.</p></div>
           </article>
           <article class="service-card reveal">
-            <img src="assets/service-havearbejde.jpeg" alt="Havearbejde og haveservice hos kunde" loading="lazy">
+            <img src="assets/service-fliserens.jpeg" alt="Udendørs haveservice og rens af belægning" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">02</span><h3 class="service-title">Haveservice</h3><p class="service-desc">Græsslåning, oprydning, beskæring og bortkørsel af haveaffald.</p></div>
           </article>
           <article class="service-card reveal">
-            <img src="assets/service-ophaengning.jpeg" alt="Ophængning af billeder og montering" loading="lazy">
+            <img src="assets/service-tagrender.jpeg" alt="Montering og vedligeholdelse omkring boligen" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">03</span><h3 class="service-title">Montering</h3><p class="service-desc">Billeder, hylder, lamper, møbler og andre opgaver, der skal sidde lige.</p></div>
           </article>
           <article class="service-card reveal">
-            <img src="assets/service-vvs.jpg" alt="Mindre VVS-opgaver og praktiske reparationer" loading="lazy">
+            <img src="assets/service-vvs.jpg" alt="Mindre VVS-opgaver og praktiske reparationer" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">04</span><h3 class="service-title">Mindre VVS & EL</h3><p class="service-desc">Små VVS-opgaver, ophæng af lamper, skift af pærer og løbende reparationer.</p></div>
           </article>
           <article class="service-card reveal">
-            <img src="assets/service-isolering.jpeg" alt="Isolering af loft med mineraluld" loading="lazy">
+            <img src="assets/service-havearbejde.jpeg" alt="Grundigt udendørs arbejde ved bolig" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">05</span><h3 class="service-title">Isolering</h3><p class="service-desc">Forbedring af komfort og energiforbrug med grundigt udført isolering.</p></div>
           </article>
           <article class="service-card reveal">
-            <img src="assets/service-tagrender.jpeg" alt="Rens af tagrender og udvendig vedligeholdelse" loading="lazy">
+            <img src="assets/service-isolering.jpeg" alt="Isolering og vedligeholdelse udført på loft" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">06</span><h3 class="service-title">Tagrender</h3><p class="service-desc">Rens, udskiftning og praktisk vedligeholdelse rundt om huset.</p></div>
           </article>
           <article class="service-card reveal">
-            <img src="assets/service-fliserens.jpeg" alt="Fliserens af indkørsel eller terrasse" loading="lazy">
+            <img src="assets/service-graesslaaning.jpg" alt="Udendørs service ved græs og belægning" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">07</span><h3 class="service-title">Fliserens</h3><p class="service-desc">Rens af mindre fliseområder, terrasser og indkørsler.</p></div>
           </article>
           <article class="service-card reveal">
-            <img src="assets/service-graesslaaning.png" alt="Græsslåning og haveservice" loading="lazy">
+            <img src="assets/service-tomrer.jpeg" alt="Løbende ejendomsservice og praktisk vedligeholdelse" width="380" height="380" loading="lazy" decoding="async">
             <div class="service-body"><span class="service-num">08</span><h3 class="service-title">Ejendomsservice</h3><p class="service-desc">Løbende hjælp til private, foreninger og mindre ejendomme.</p></div>
           </article>
         </div>
@@ -426,11 +481,11 @@
       <div class="wrap about-grid">
         <div class="team-grid">
           <figure class="person-card">
-            <img src="assets/jonas.jpg" alt="Jonas Poulsen fra A-Handyman" loading="lazy">
+            <img src="assets/jonas.jpg" alt="Jonas Poulsen fra A-Handyman" width="384" height="481" loading="lazy" decoding="async">
             <figcaption><strong>Jonas Poulsen</strong>Mobil: <a href="tel:+4553761141">53761141</a></figcaption>
           </figure>
           <figure class="person-card">
-            <img src="assets/frederik.jpg" alt="Frederik Schütt Schmidtke fra A-Handyman" loading="lazy">
+            <img src="assets/frederik.jpg" alt="Frederik Schütt Schmidtke fra A-Handyman" width="384" height="481" loading="lazy" decoding="async">
             <figcaption><strong>Frederik Schütt Schmidtke</strong>Mobil: <a href="tel:+4528604425">28604425</a></figcaption>
           </figure>
         </div>
@@ -492,9 +547,12 @@
           </article>
           <article class="price-card reveal">
             <div class="price-label">Betaling</div>
-            <h3 class="price-name">MobilePay</h3>
-            <img src="assets/mobilepay.png" alt="MobilePay" width="150" height="48" loading="lazy">
-            <p class="price-desc">Vi tager MobilePay som betaling og aftaler altid rammerne inden arbejdet starter.</p>
+            <h3 class="price-name">Kort, faktura & MobilePay</h3>
+            <div class="payment-visual" aria-label="Betaling med Dankort, Visa, faktura og MobilePay">
+              <img class="card-payment" src="assets/payment-cards.svg" alt="Dankort og Visa kortbetaling" width="300" height="120" loading="lazy" decoding="async">
+              <img class="mobilepay-logo" src="assets/mobilepay.png" alt="MobilePay" width="300" height="96" loading="lazy" decoding="async">
+            </div>
+            <p class="price-desc">Vi tilbyder kortbetaling, faktura og MobilePay. Rammer, pris og betalingsform aftales altid, inden arbejdet starter.</p>
           </article>
         </div>
       </div>
